@@ -37,12 +37,10 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 pion_position[0] = min(pion_position[0] + 1, nb_colonne - 1)
-            elif event.key == pygame.K_LEFT:
-                pion_position[0] = max(pion_position[0] - 1, 0)
-            elif event.key == pygame.K_DOWN:
                 pion_position[1] = min(pion_position[1] + 1, nb_ligne - 1)
-            elif event.key == pygame.K_UP:
-                pion_position[1] = max(pion_position[1] - 1, 0)
+            elif event.key == pygame.K_LEFT:
+                pion_position[0] = max(pion_position[0] - 1, 0,)
+                pion_position[1] = min(pion_position[1] + 1, nb_ligne - 1)
 
     screen.fill((255,255,255))
 
