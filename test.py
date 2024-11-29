@@ -6,7 +6,7 @@ screen = pygame.display.set_mode((500, 500))
 screen.fill((255, 255, 255))
 
 # Load and scale the pion image
-pion = pygame.image.load("image\\MA-24_pion.png")
+pion = pygame.image.load("Image/MA-24_pion_blanc.png")
 pion = pygame.transform.scale(pion, (50, 50))
 
 # Draw the grid
