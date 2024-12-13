@@ -5,10 +5,11 @@
 """
 
 import pygame
-from display import plateau, start
+from display import plateau, start, pion_placement
 
 if __name__ == "__main__":
     pygame.init()
     plateau()
+    pion_placement()
     start()
     pygame.quit()

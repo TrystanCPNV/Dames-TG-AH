@@ -13,8 +13,7 @@ pion_noir = pygame.image.load("images/MA-24_pion_noir.png")
 pion_noir = pygame.transform.scale(pion_noir, (50, 50))
 
 pion_position_blanc = [0, 0]
-pion_position_noir = [9, 9]
-
+pion_position_noir = [1, 9]
 
 def plateau():
     for i in range(nb_ligne):
@@ -25,9 +24,29 @@ def plateau():
                 pygame.draw.rect(screen, (0, 0, 0), (x_case, y_case, 50, 50))
             else:
                 pygame.draw.rect(screen, (255, 255, 255), (x_case, y_case, 50, 50))
-    screen.blit(pion_blanc, (pion_position_blanc[0] * 50, pion_position_blanc[1] * 50))
-    screen.blit(pion_noir, (pion_position_noir[0] * 50, pion_position_noir[1] * 50))
-    pygame.display.flip()
+
+    #screen.blit(pion_blanc, (pion_position_blanc[0] * 50, pion_position_blanc[1] * 50))
+    #screen.blit(pion_noir, (pion_position_noir[0] * 50, pion_position_noir[1] * 50))
+    #pygame.display.flip()
+
+
+def pion_placement():
+    for i in range(4):
+        pion_position_blanc[0] = 0
+        pion_position_noir[0] = 1
+        nb_pion = 0
+        for o in range(5):
+            nb_pion += 1
+            screen.blit(pion_blanc, (pion_position_blanc[0] * 50, pion_position_blanc[1] * 50))
+            pion_position_blanc[0] += 2
+            screen.blit(pion_noir, (pion_position_noir[0] * 50, pion_position_noir[1] * 50))
+            pion_position_noir[0] += 2
+        if nb_pion == 5:
+            pion_position_blanc[1] += 1
+            pion_position_blanc[0] = 0
+            pion_position_noir[1] -= 1
+            pion_position_noir[0] = 1
+
 
 
 def start():
