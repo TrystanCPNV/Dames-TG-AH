@@ -25,10 +25,6 @@ def plateau():
             else:
                 pygame.draw.rect(screen, (255, 255, 255), (x_case, y_case, 50, 50))
 
-    #screen.blit(pion_blanc, (pion_position_blanc[0] * 50, pion_position_blanc[1] * 50))
-    #screen.blit(pion_noir, (pion_position_noir[0] * 50, pion_position_noir[1] * 50))
-    #pygame.display.flip()
-
 
 def pion_placement():
     for i in range(4):
