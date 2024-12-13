@@ -32,9 +32,13 @@ def plateau():
 
 def pion_placement():
     for i in range(4):
-        pion_position_blanc[0] = 0
-        pion_position_noir[0] = 1
         nb_pion = 0
+        if i == 0 or i == 2:
+            pion_position_blanc[0] = 0
+            pion_position_noir[0] = 1
+        elif i == 1 or i == 3:
+            pion_position_blanc[0] = 0 + 1
+            pion_position_noir[0] = 0
         for o in range(5):
             nb_pion += 1
             screen.blit(pion_blanc, (pion_position_blanc[0] * 50, pion_position_blanc[1] * 50))
@@ -48,7 +52,6 @@ def pion_placement():
             pion_position_noir[0] = 1
 
 
-
 def start():
     from rules import mouvement
     running = True
@@ -56,7 +59,8 @@ def start():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        pygame.display.flip()
         mouvement()
+        pygame.display.flip()
+
 
 
