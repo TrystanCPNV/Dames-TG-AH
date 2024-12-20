@@ -38,6 +38,5 @@ def mouvement():
                 deplacer_pion_haut_gauche()
             if event.key == pygame.K_DOWN:
                 deplacer_pion_haut_droite()
-
             plateau()
             pygame.display.flip()
